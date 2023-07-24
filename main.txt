@@ -1,0 +1,6 @@
+what is the capital city of nepal?
+A:kathmandu
+B:London
+C:Dhaka
+D:Berlin
+answer:A
