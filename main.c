@@ -1,74 +1,52 @@
 #include <stdio.h>
-#include<string.h>
+#include <string.h>
+#include <stdlib.h>
 
-void result(int);
-
-int main() {
+void main() {
+    int numberOfOptions = 4, numberOfQuestions = 2;
+    char questions[numberOfQuestions][100];
+    char options[numberOfQuestions][numberOfOptions][100];
+    char answer[numberOfQuestions][10];
+    char userInput[numberOfQuestions][10];
     FILE *fp;
-    char line[50];
-    char answer[50];
-    int marks=0;
 
-    fp = fopen("main.txt", "r");
+    fp = fopen("try_final.txt", "r");
 
-    if (fp == NULL) {
-        printf("Failed to open the file.\n");
-        return 1;
-    }
-    //question
-    if (fgets(line, sizeof(line), fp) != NULL) {
-    printf("%s", line);
-    } 
-    else{
-        printf("error");
-    }
-//A
-    if (fgets(line, sizeof(line), fp) != NULL) {
-    printf("%s", line);
-    } 
-    else{
-        printf("error");
-    }  
-    //B
-      if (fgets(line, sizeof(line), fp) != NULL) {
-    printf("%s", line);
-    } 
-    else{
-        printf("error");
-    }  
-    //C
-      if (fgets(line, sizeof(line), fp) != NULL) {
-    printf("%s", line);
-    } 
-    else{
-        printf("error");
-    }
-    //D
-        if (fgets(line, sizeof(line), fp) != NULL) {
-    printf("%s", line);
-    } 
-    else{
-        printf("error");
-    }
-    fscanf(fp,"answer:%s",line);
+    for (int i = 0; i < numberOfQuestions; i++) 
+    {
+        fscanf(fp, "%99[^\n]%*c", questions[i]);
+        printf("%s\n", questions[i]);
 
-    scanf("%[^\n]",answer);
-        if(strcasecmp(line,answer)==0)
+        for (int j = 0; j < numberOfOptions; j++) 
         {
-            result(marks);
+            fscanf(fp, "%99[^\n]%*c", options[i][j]);
+            printf("%s\n", options[i][j]);
         }
-        else
-        {
-            printf("incorrect");
-        }
-    fclose(fp);
-    return 0;
+
+        fscanf(fp, "answer:%s\n", answer[i]);
+
+    // Inside the for-loop for user input
+printf("Enter your answer for question %d: ", i + 1);
+fgets(userInput[i], sizeof(userInput[i]), stdin);
+
+// Remove trailing newline from userInput[i]
+userInput[i][strcspn(userInput[i], "\n")] = '\0';
 }
-void  result(int marks)
-{
-    printf("correct");
-    marks++;
-    printf("\n****Result****");
-    printf("\nYour marks:%d",marks);
+
+    fclose(fp);
+
+    int score = 0;
+    for (int i = 0; i < numberOfQuestions; i++) {
+        if (strcasecmp(userInput[i], answer[i]) == 0) {
+            score++;
+        }
+        else{
+            printf("%s\n",answer[i]);
+        }
+    }
+
+    printf("Your score: %d/%d\n", score, numberOfQuestions);
+
+
 }
 
