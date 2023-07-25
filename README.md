@@ -2,6 +2,7 @@
 Just trying different funtions and experimenting
 # References
 https://www.tutorialspoint.com/c_standard_library/c_function_fgets.htm
+https://stackoverflow.com/questions/39431924/what-does-n-mean-in-c
 # Basic Principles
 # 1.c
 ```c
