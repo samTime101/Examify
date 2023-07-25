@@ -1,6 +1,13 @@
-what is the capital city of nepal?
-A:kathmandu
+What is the capital city of nepal?
+A:Kathmandu
 B:London
-C:Dhaka
+C:Washington
 D:Berlin
 answer:A
+
+What is national weapon of Nepal?
+A:Sword
+B:Khukuri
+C:Gun
+D:knife
+answer:B
