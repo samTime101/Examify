@@ -18,10 +18,3 @@ B:Ethyl alcohol
 C:Ethane
 D:Glycerol
 answer:A
-
-What is Kricchof's 1st law about?
-A:conservation of charge
-B:conservation of energy
-C:Mass and energy
-D:none of the above
-answer:A
