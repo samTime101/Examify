@@ -3,11 +3,10 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include<stdio.h>
 #include "result_show.h"
 
 void exam_logic() {
-    int numberOfOptions = 4, numberOfQuestions = 4;
+    int numberOfOptions = 4, numberOfQuestions = 3;
     char questions[numberOfQuestions][100];
     char options[numberOfQuestions][numberOfOptions][100];
     char answer[numberOfQuestions][10];
