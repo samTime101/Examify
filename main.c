@@ -11,7 +11,7 @@ DECLARING A DEFAULT NUMBER OF QUESTIONS
 THE DEFAULT NUMBER OF QUESTIONS IS 4
 ---------------------------------------
 */
-int numberOfQuestions = 5;
+int numberOfQuestions = 4;
 
 
 void main()
