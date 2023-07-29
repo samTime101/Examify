@@ -1,41 +1,63 @@
-//exam_logic.h
+/*exam_logic.h
+*HEADER FILE WIRTTEN BY SAMTIME101
+*https://samiptime101.web.app
+*exam logic should be included to the main program to read the questions and print them
+--------------------------------------------------------
+*/
+
+
 
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include "result_show.h"
 
-void exam_logic() {
-    int numberOfOptions = 4, numberOfQuestions = 3;
-    char questions[numberOfQuestions][100];
-    char options[numberOfQuestions][numberOfOptions][100];
+void exam_logic(char name[], char school[], int numberOfQuestions);
+
+
+void exam_logic(char name[], char school[], int numberOfQuestions)
+{
+
+
+    int numberOfOptions = 4;
+    char questions[numberOfQuestions][300];
+    char options[numberOfQuestions][numberOfOptions][300];
     char answer[numberOfQuestions][10];
     char userInput[numberOfQuestions][10];
     FILE *fp;
 
-    fp = fopen("try_final.txt", "r");
+    fp =  fopen("E:\\\\newProject\\\\try_final.txt", "r");
 
-    for (int i = 0; i < numberOfQuestions; i++) 
+    for (int i = 0; i < numberOfQuestions; i++)
     {
-        fscanf(fp, "%99[^\n]%*c", questions[i]);
+        fscanf(fp, "%299[^\n]%*c", questions[i]);
         printf("\n%s\n", questions[i]);
 
-        for (int j = 0; j < numberOfOptions; j++) 
+        for (int j = 0; j < numberOfOptions; j++)
         {
-            fscanf(fp, "%99[^\n]%*c", options[i][j]);
+            fscanf(fp, "%299[^\n]%*c", options[i][j]);
             printf("%s\n", options[i][j]);
         }
 
         fscanf(fp, "answer:%s\n", answer[i]);
 
-    // Inside the for-loop for user input
+        /* ACCESSING AND STORING USER INPUT WITH LOOP
 
-    printf("Enter your answer for question %d: ", i + 1);
-    fgets(userInput[i], sizeof(userInput[i]), stdin);
+        DISCARDED PRINTF
 
-// Remove newline from userInpu
-    userInput[i][strcspn(userInput[i], "\n")] = '\0';
-}
+        printf("Enter your answer for question %d: ", i + 1);
+        ----------------------------------------------------------------
+        */
+        printf("Enter answer : ");
+        fgets(userInput[i], sizeof(userInput[i]), stdin);
+
+        /*
+        REMOVING WHITE SPACE FROM USER INPUT
+        ------------------------------------------------------------
+        */
+        userInput[i][strcspn(userInput[i], "\n")] = '\0';
+    }
     fclose(fp);
-    result(numberOfQuestions,userInput,answer);
+    result(numberOfQuestions, userInput, answer, name, school);
 }
