@@ -1,6 +1,7 @@
 # Examify
 Just trying different funtions and experimenting
 # References
+https://www.open-std.org/jtc1/sc22/wg14/www/docs/n3096.pdf
 https://www.tutorialspoint.com/c_standard_library/c_function_fgets.htm
 https://stackoverflow.com/questions/39431924/what-does-n-mean-in-c
 # Basic Principles
