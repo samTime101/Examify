@@ -1,0 +1,76 @@
+1: Which gas makes up the majority of Earth's atmosphere?
+A: Nitrogen
+B: Oxygen
+C: Carbon dioxide
+D: Argon
+answer: A
+
+2: What is the largest planet in our solar system?
+A: Earth
+B: Mars
+C: Jupiter
+D: Saturn
+answer: C
+
+3: Who wrote the play "Romeo and Juliet"?
+A: William Shakespeare
+B: Jane Austen
+C: Charles Dickens
+D: Mark Twain
+answer: A
+
+4: What is the main ingredient in guacamole?
+A: Tomatoes
+B: Avocados
+C: Onions
+D: Cilantro
+answer: B
+
+5: In which year did the Titanic sink?
+A: 1905
+B: 1912
+C: 1920
+D: 1931
+answer: B
+
+6: What is the currency of Japan?
+A: Won
+B: Ringgit
+C: Yen
+D: Baht
+answer: C
+
+7: Which element has the chemical symbol "H"?
+A: Hydrogen
+B: Helium
+C: Carbon
+D: Oxygen
+answer: A
+
+8: What is the largest mammal on Earth?
+A: Elephant
+B: Blue whale
+C: Giraffe
+D: Rhinoceros
+answer: B
+
+9: What is the capital city of Brazil?
+A: Rio de Janeiro
+B: São Paulo
+C: Brasília
+D: Salvador
+answer: C
+
+10: What is the main component of the Earth's core?
+A: Iron
+B: Nickel
+C: Gold
+D: Silver
+answer: A
+
+11: Which famous scientist developed the theory of relativity?
+A: Isaac Newton
+B: Albert Einstein
+C: Galileo Galilei
+D: Marie Curie
+answer: B

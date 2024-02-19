@@ -2,28 +2,29 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-#include "exam_logic.h"
-// #include "./textinc.h"
+#include "./exam_logic.h"
 
 void admin();
 /*
 DECLARING A DEFAULT NUMBER OF QUESTIONS
-THE DEFAULT NUMBER OF QUESTIONS IS 4
+THE DEFAULT NUMBER OF QUESTIONS IS 3
 WE CAN CHANGE AS ADMIN TO OUR PREFERRED 
 NUMBER OF QUESTIONS.
 ---------------------------------------
 */
-int numberOfQuestions = 4;
-
+int numberOfQuestions = 3;
+char path[45] = "main.txt";
 
 void main()
 {
-    // if (SetConsoleFontSize(24))
-    // {
      	int choose;
         char name[20], school[40], user_pass[10], pass[10] = "admin";
-
-        printf("Choose the following");
+        printf("****EXAMIFY-updated on magh 10 2080****");
+        printf("\nDEFAULT QUESTIONS SET : %d",numberOfQuestions);
+        printf("\nDefault file path : %s",path);
+        printf("\n************************************");
+        printf("\n");
+        printf("\nChoose the following");
         printf("\nPress 1 to take exam");
         printf("\nPress 2 to know about program");
         printf("\nPress 3 to Admin Panel");
@@ -33,7 +34,7 @@ void main()
         switch (choose)
         {
         case 1:
-            system("cls");
+            system("cls || clear");
             printf("Enter name:");
             fgets(name, sizeof(name), stdin);
             printf("\nEnter School:");
@@ -44,19 +45,19 @@ void main()
 PASSING NUMBER OF QUESTIONS TO EXAM LOGIC FUNCTION
 IF NOT SPECIFIED BY ADMIN , DEFAULT VALUE WILL BE GONE i.e. 4
 */
-                exam_logic(name, school, numberOfQuestions); 
+                exam_logic(name, school, numberOfQuestions,path); 
             }
             else
             {
                 printf("Wrong Entry 101!\n");
                 sleep(2);
-                system("cls");
+                system("cls || clear");
                 main();
             }
             break;
 
         case 2:
-            system("cls");
+            system("cls || clear");
             printf("Made by Samip Regmi for the final year project of class 12 \nSamip Regmi\nClass 11:pascal\nClass 12:euclid\n\n");
             sleep(2);
             main();
@@ -76,7 +77,7 @@ IF NOT SPECIFIED BY ADMIN , DEFAULT VALUE WILL BE GONE i.e. 4
             }
             else
             {
-                system("cls");
+                system("cls || clear");
                 main();
             }
             break;
@@ -92,7 +93,7 @@ MAKING SURE NO PRESENCE OF WHITE SPACE
 */
         default:
             while (getchar() != '\n');
-            system("cls");
+            system("cls ||clear");
             main();
             break;
         }
@@ -104,34 +105,73 @@ ADMIN PANEL TO ADD NUMBER OF QUESTIONS AND OTHER ADMIN PROPERTIES
 ------------------------------------------------------------
 */
 
-
+/* UPDATED ADMIN FUNCTION
+ADDED || clear for both linux and windows system
+*/ 
 void admin()
 {
     int choose;
-    system("cls");
+    system("cls || clear");
     printf("Hello from admin\n");
-    printf("Press 1 to setup questions\n:");
+    printf("\nPress 1 to setup questions and 2 to change file path:");
     scanf("%d", &choose);
     switch (choose)
     {
     case 1:
         printf("Enter number of questions:");
-		  if(scanf("%d", &numberOfQuestions)==1)
-		  {
-        system("cls");
-        main(); 
-        break;
-     }
-     else{
-     	   printf("Invalid choice, returning to main menu.\n");
-        sleep(3);
-        system("cls");
-        main();
-     }
+        if(scanf("%d", &numberOfQuestions)==1)
+        {
+            system("cls || clear");
+            main(); 
+            break;
+        }
+        else
+        {
+            printf("Invalid choice, returning to main menu.\n");
+            sleep(3);
+            system("cls || clear");
+            main();
+        }    
+    case 2:
+        printf("Enter the file path:");
+//REMOVE THE NEW LINE 
+while(getchar() != '\n'); 
+// READING ONLY 15 NOT NEW LINE
+
+    if (scanf("%15[^\n]", path) == 1) {
+        while (getchar() != '\n'); 
+            printf("Number of Questions in %s ?:",path);
+                if(scanf("%d", &numberOfQuestions)==1)
+                    {
+                        system("cls || clear");
+                        main(); 
+                        break;
+
+                        }
+                else
+                {
+                    printf("Invalid choice, returning to main menu.\n");
+                    sleep(3);
+                    system("cls || clear");
+                    main();
+                }          // system("cls || clear");
+
+                    // main(); 
+                    break;
+        }
+        else
+        {
+            printf("Invalid choice, returning to main menu.\n");
+            sleep(3);
+            system("cls || clear");
+            main();
+        }
+
+
     default:
         printf("Invalid choice, returning to main menu.\n");
         sleep(3);
-        system("cls");
+        system("cls || clear");
         main();
         break;
     }
